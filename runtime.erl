@@ -2,7 +2,7 @@
 %% @desc Erlang application to test the run time of erlang for either counting numbers or reading and writing a file line by line
 
 
--module(easy).
+-module(runtime).
 -export([time_check/1,app_start/0,second_app_start/0,readlines/0]).
 
 %=========================================================
@@ -12,7 +12,7 @@
 %
 %@desc Starts the timer (timer is in microseconds) and calls the function passing in the starting digit
 %
-app_start()-> timer:tc(easy,time_check,[0]).
+app_start()-> timer:tc(runtime,time_check,[0]).
 
 %
 %@desc Recurively adds 1 to the current number until you reach the desired number
@@ -31,7 +31,7 @@ time_check(100000)->1
 %
 %@desc Starts the timer (timer is in microseconds) passing in the function to call and its arguments in this case none
 %
-second_app_start()->timer:tc(easy,readlines,[]).
+second_app_start()->timer:tc(runtime,readlines,[]).
 
 %
 %@desc Opens both files and the calls the function that does the reading, after this closes both files.
